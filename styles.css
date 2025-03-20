@@ -1,5 +1,122 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+#header {
+    background-color: black;
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+#logo {
+    font-family: "Sumana", serif;
+    font-size: 2em;
+    height: 100%;
+    color: white;
+    margin-left: 1em;
+    /* margin-top: 0.5em; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* margin: auto; */
+    align-self: center;
+    align-items: center;
+    /* background-color: chartreuse; */
+}
+
+#big-search {
+    /* width: 100%; */
+    height: 70%;
+    width: 42em;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: white;
+    border-radius: 0.5em;
+    /* background-color: antiquewhite; */
+}
+
+#search-sec {
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    font-size: 1.5em;
+}
+
+#search-sec>svg,
+input,
+button {
+    margin: 0.2em 0.2em;
+}
+
+#input-box {
+    font-size: 0.8em;
+    border: none;
+    outline: none;
+    width: 25em;
+}
+
+#clear-all {
+    border: none;
+    outline: none;
+    border-radius: 0.4em;
+    /* border: 0.01em solid black; */
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#clear-all:hover {
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.45),
+        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
+        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
+
+}
+
+#search-btn {
+    font-size: 0.8em;
+    border: none;
+    outline: none;
+    border-radius: 0.4em;
+    /* border: 0.01em solid black; */
+    padding: 0.3em 0.5em;
+    background-color: white;
+    margin-right: 0.2em;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.45),
+        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
+        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
+    border: none;
+}
+
+#extra-icons svg {
+    margin: 0 0.8em;
+}
+
+#extra-icons {
+    /* background-color: beige; */
+}
+
+#login-icon, #cart-icon{
+    transition: all 0.3s ease-in-out;
+}
+#login-icon:hover, #cart-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }

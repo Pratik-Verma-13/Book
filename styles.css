@@ -166,3 +166,111 @@ button {
         width: 15em;
     }
 }
+
+.favorites-section {
+    background: #F5E6D7;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.favorites-section h2 {
+    font-size: 2.5rem;
+    color: #3A2C1E;
+    margin-bottom: 30px;
+}
+
+/* Book Card */
+.book-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Book Image */
+.book-image {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Book Info */
+.book-info {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #3A2C1E;
+    margin-bottom: 5px;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #6C4A35;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    font-size: 0.9rem;
+    color: #4B3621;
+    opacity: 0.8;
+    line-height: 1.4;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+/* Price */
+.book-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #E6A157;
+}
+
+/* Buttons */
+.book-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-to-cart, .add-to-wishlist {
+    background: #8C5E3C;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.add-to-cart:hover, .add-to-wishlist:hover {
+    background: #E6A157;
+    transform: scale(1.05);
+}
+
+.fav-title{
+    text-align: center;
+    font-size: 2rem; 
+    font-family: "Pacifico", cursive;
+    font-weight: 300;
+    font-style: normal;
+    color: #E6A157;
+    letter-spacing: 1.5px; 
+}

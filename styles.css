@@ -123,7 +123,6 @@ button {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-`
 }
 #cover-text{
     font-size: 5rem;
@@ -273,4 +272,38 @@ button {
     font-style: normal;
     color: #E6A157;
     letter-spacing: 1.5px; 
+}
+
+#add-section{
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;   
+    display: flex;
+    flex-direction: column;
+}
+#add-title{
+    font-size: 4rem;
+    color: #E6A157;
+    text-align: center;
+}
+#add-form{
+    display: flex;
+    flex-direction: column;
+}
+/* #add-form div label{
+    width: 30%;
+}
+#add-form div input{
+    width: 70%;
+} */
+#labels, #inputs{
+    display: flex;
+    flex-direction: column;
+}
+#labels{
+    width: 30%;
+    text-align: right;
+}
+#inputs{
+    width: 70%;
 }

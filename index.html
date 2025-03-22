@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sumana:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header id="header">
         <div id="logo">
             <p>पुस्तकम्</p>
-             <!-- <p>Pustakam</p> -->
+            <!-- <p>Pustakam</p> -->
         </div>
         <div id="big-search">
             <div id="search-sec">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 -960 960 960" width="1.5em" fill="#000"
-                    id="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 -960 960 960" width="1.5em"
+                    fill="#000" id="search-icon">
                     <path
                         d="M779.38-153.85 528.92-404.31q-30 25.54-69 39.54t-78.38 14q-96.1 0-162.67-66.53-66.56-66.53-66.56-162.57 0-96.05 66.53-162.71 66.53-66.65 162.57-66.65 96.05 0 162.71 66.56Q610.77-676.1 610.77-580q0 41.69-14.77 80.69t-38.77 66.69l250.46 250.47-28.31 28.3ZM381.54-390.77q79.61 0 134.42-54.81 54.81-54.8 54.81-134.42 0-79.62-54.81-134.42-54.81-54.81-134.42-54.81-79.62 0-134.42 54.81-54.81 54.8-54.81 134.42 0 79.62 54.81 134.42 54.8 54.81 134.42 54.81Z" />
                 </svg>
                 <input type="text" id="input-box" placeholder="Search Books, Authors, Titles, Genres and More" />
-                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 -960 960 960" width="1.5em" fill="#000"
-                    id="clear-all" onclick="clearInput()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 -960 960 960" width="1.5em"
+                    fill="#000" id="clear-all" onclick="clearInput()">
                     <path
                         d="M256-227.69 227.69-256l224-224-224-224L256-732.31l224 224 224-224L732.31-704l-224 224 224 224L704-227.69l-224-224-224 224Z" />
                 </svg>
@@ -34,7 +37,11 @@
             </div>
         </div>
         <div id="extra-icons">
-            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="#FFFFFF" id="wishlist-icon"><path d="M400-420h139.23v-40H400v40Zm0-120h278.46v-40H400v40Zm0-120h278.46v-40H400v40Zm-75.38 380q-27.62 0-46.12-18.5Q260-317 260-344.62v-430.76q0-27.62 18.5-46.12Q297-840 324.62-840h430.76q27.62 0 46.12 18.5Q820-803 820-775.38v430.76q0 27.62-18.5 46.12Q783-280 755.38-280H324.62Zm0-40h430.76q9.24 0 16.93-7.69 7.69-7.69 7.69-16.93v-430.76q0-9.24-7.69-16.93-7.69-7.69-16.93-7.69H324.62q-9.24 0-16.93 7.69-7.69 7.69-7.69 16.93v430.76q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69Zm-120 160q-27.62 0-46.12-18.5Q140-197 140-224.61v-470.77h40v470.77q0 9.23 7.69 16.92 7.69 7.69 16.93 7.69h470.76v40H204.62ZM300-800v480-480Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="#FFFFFF"
+                id="wishlist-icon">
+                <path
+                    d="M400-420h139.23v-40H400v40Zm0-120h278.46v-40H400v40Zm0-120h278.46v-40H400v40Zm-75.38 380q-27.62 0-46.12-18.5Q260-317 260-344.62v-430.76q0-27.62 18.5-46.12Q297-840 324.62-840h430.76q27.62 0 46.12 18.5Q820-803 820-775.38v430.76q0 27.62-18.5 46.12Q783-280 755.38-280H324.62Zm0-40h430.76q9.24 0 16.93-7.69 7.69-7.69 7.69-16.93v-430.76q0-9.24-7.69-16.93-7.69-7.69-16.93-7.69H324.62q-9.24 0-16.93 7.69-7.69 7.69-7.69 16.93v430.76q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69Zm-120 160q-27.62 0-46.12-18.5Q140-197 140-224.61v-470.77h40v470.77q0 9.23 7.69 16.92 7.69 7.69 16.93 7.69h470.76v40H204.62ZM300-800v480-480Z" />
+            </svg>
         </div>
     </header>
     <section id="cover">
@@ -53,9 +60,30 @@
     <section id="favorites-section">
         <h2 class="fav-title">This Week's Favourites</h2>
         <div id="book-list">
-          <!-- Book items will be injected here -->
+            <!-- Book items will be injected here -->
         </div>
+    </section>
+
+    <section id="add-section-parent">
+        <section id="add-section">
+            <h2 id="add-title">Add a Book</h2>
+            <div id="add-form">
+                    <div id="book-name-sec">
+                        <label for="book-name">Book Name</label>
+                        <input type="text" id="book-name" placeholder="Enter Book Name">
+                    </div>
+                    <div id="book-author-sec">
+                        <label for="book-author">Author</label>
+                        <input type="text" id="book-author" placeholder="Enter Author Name">
+                    </div>
+                    <div id="book-price-sec">
+                        <label for="book-price">Price</label>
+                        <input type="text" id="book-price" placeholder="Enter Price">
+                    </div>
+            </div>
+        </section>
     </section>
     <script src="script.js"></script>
 </body>
+
 </html>

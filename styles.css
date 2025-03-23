@@ -107,49 +107,53 @@ button {
     /* background-color: beige; */
 }
 
-#wishlist-icon{
+#wishlist-icon {
     transition: all 0.3s ease-in-out;
 }
-#wishlist-icon:hover{
+
+#wishlist-icon:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-#cover{
+#cover {
     height: 27em;
     width: 100%;
-    background-color:beige;
+    background-color: beige;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
-#cover-text{
+
+#cover-text {
     font-size: 5rem;
     font-family: "Bebas Neue", sans-serif;
 }
-#cover-text p{
+
+#cover-text p {
     text-align: center;
 }
-#cover-text-tagline{
+
+#cover-text-tagline {
     font-size: 2rem;
     font-family: "Bebas Neue", sans-serif;
     color: grey;
 }
 
-#explore-btn{
+#explore-btn {
     font-size: 1.5em;
     outline: none;
     border: none;
     background-color: white;
     font-family: "Winky Sans", sans-serif;
-    padding: 0.5em 1em; 
+    padding: 0.5em 1em;
     border-radius: 0.5em;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-#explore-btn:hover{ 
+#explore-btn:hover {
 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
@@ -161,6 +165,7 @@ button {
     #big-search {
         width: 30em;
     }
+
     #input-box {
         width: 15em;
     }
@@ -248,7 +253,8 @@ button {
     margin-top: 10px;
 }
 
-.add-to-cart, .add-to-wishlist {
+.add-to-cart,
+.add-to-wishlist {
     background: #8C5E3C;
     color: white;
     border: none;
@@ -259,51 +265,77 @@ button {
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.add-to-cart:hover, .add-to-wishlist:hover {
+.add-to-cart:hover,
+.add-to-wishlist:hover {
     background: #E6A157;
     transform: scale(1.05);
 }
 
-.fav-title{
+.fav-title {
     text-align: center;
-    font-size: 2rem; 
+    font-size: 2rem;
     font-family: "Pacifico", cursive;
     font-weight: 300;
     font-style: normal;
     color: #E6A157;
-    letter-spacing: 1.5px; 
+    letter-spacing: 1.5px;
 }
 
-#add-section{
+#add-section-parent {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+#add-section {
     border: 1px solid black;
     width: 50%;
-    margin: auto;   
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
-#add-title{
-    font-size: 4rem;
-    color: #E6A157;
+
+#add-title {
+    font-size: 3.5rem;
+    color: black;
     text-align: center;
 }
-#add-form{
+
+/* #add-form {
     display: flex;
     flex-direction: column;
-}
-/* #add-form div label{
-    width: 30%;
-}
-#add-form div input{
-    width: 70%;
-} */
-#labels, #inputs{
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
+/* } */
+
+#add-form{    
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-#labels{
-    width: 30%;
-    text-align: right;
+
+#add-form input {
+    width: 50%;
+    margin: 0.3em auto;
+    font-size: 1.3rem;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 0.5em;
 }
-#inputs{
-    width: 70%;
+
+#add-form label {
+    position: absolute;
+    top: 50%;
+    padding: 0.5em;
+    transform: translateY(-50%);
+    /* transform: translateX(0%); */
+    transition: all 0.3s ease-in-out;
+    color: #000;
+    font-size: 1.3rem;
+}
+
+#add-form input:focus {
+    outline: none;
+    z-index: 111;
 }

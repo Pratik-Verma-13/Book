@@ -46,6 +46,7 @@ searchButton.addEventListener('click', function(){
             let title = book.title.toLowerCase();
             let author = book.author.toLowerCase();
             if (title.includes(searchValue) || author.includes(searchValue)) {
+                console.log("hello");
                 let child = document.createElement('div');
                 child.innerHTML = `
                 <div id="searched-book-card">
@@ -58,13 +59,13 @@ searchButton.addEventListener('click', function(){
             }
         }
     });
-    if (displaySearchedBooks.innerHTML == "") {
-        alert("Sorry, No books found");
+    if (displaySearchedBooks.innerHTML != "") {
+        showSearch.style.display = "block";
+        
     }
     else{
-        showSearch.style.display = "block";
-    }
-    
+        alert("Sorry, No books found");
+    }   
 });
 
 
@@ -93,7 +94,7 @@ window.addEventListener('load', () => {
     getBooks().then(books => {
         for(let key in books){
             let book = books[key];
-            localStorage.setItem(`${book.id}`, `${book.title}`);
+            localStorage.setItem(`${book.id}`, `${JSON.stringify(book)}`);
         }
     })
 })
@@ -104,14 +105,17 @@ function addBooks(){
     let addAuthor = document.getElementById('add-author-name');
     let addPrice = document.getElementById('add-price');
     let addId = document.getElementById('add-id');  
-    
+    if(addTitle.value == "" || addAuthor.value == "" || addPrice.value == "" || addId.value == ""){
+        alert("Please fill the fields");
+        return
+    }
     let book = {
         "id": addId.value,
         "title": addTitle.value,
         "author": addAuthor.value,
         "price": addPrice.value
     }
-    localStorage.setItem(`${book.id}`, `${book.title}`);   
+    localStorage.setItem(`${book.id}`, `${JSON.stringify(book)}`);   
     alert("Book added successfully");
 }
 

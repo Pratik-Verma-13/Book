@@ -104,9 +104,9 @@ button {
     margin: 0 0.8em;
 }
 
-#extra-icons {
-    /* background-color: beige; */
-}
+/* #extra-icons {
+    background-color: beige;
+} */
 
 #wishlist-icon {
     transition: all 0.3s ease-in-out;

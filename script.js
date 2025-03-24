@@ -40,14 +40,12 @@ searchButton.addEventListener('click', function(){
         return
     }
     showSearch.style.display = "none";
-    var count = 0;
     getBooks().then(books => {
         for (let key in books) {
             let book = books[key];
             let title = book.title.toLowerCase();
             let author = book.author.toLowerCase();
             if (title.includes(searchValue) || author.includes(searchValue)) {
-                count += 1;
                 let child = document.createElement('div');
                 child.innerHTML = `
                 <div id="searched-book-card">
@@ -60,8 +58,13 @@ searchButton.addEventListener('click', function(){
             }
         }
     });
-    console.log(count);
-    showSearch.style.display = "block";
+    if (displaySearchedBooks.innerHTML == "") {
+        alert("Sorry, No books found");
+    }
+    else{
+        showSearch.style.display = "block";
+    }
+    
 });
 
 
@@ -71,3 +74,21 @@ async function getBooks() {
     return data;
 }
 
+function clearInput(){
+    let searchBox = document.getElementById('input-box');
+    searchBox.value = "";
+}
+
+// Displaying books according to price
+
+function sortBooks(){
+    getBooks().then(books => () => {
+        bookArray = Object.values(books);
+        console.log("Hello");
+        console.log(bookArray);
+        bookArray.sort((a, b) => a.price - b.price);
+        console.log(bookArray);
+    });
+}
+
+sortBooks();

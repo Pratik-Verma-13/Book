@@ -361,7 +361,7 @@ button {
 #searched-books{
     margin: 5em;
     border: 1px solid black;
-    /* display: none; */
+    display: none;
 }
 #searched-books-title{
     font-size: 3rem;

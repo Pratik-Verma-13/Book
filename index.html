@@ -33,7 +33,9 @@
                     <path
                         d="M256-227.69 227.69-256l224-224-224-224L256-732.31l224 224 224-224L732.31-704l-224 224 224 224L704-227.69l-224-224-224 224Z" />
                 </svg>
-                <button id="search-btn">Search</button>
+                <a href="#searched-books">
+                    <button id="search-btn">Search</button>
+                </a>
             </div>
         </div>
         <div id="extra-icons">
@@ -74,7 +76,19 @@
             </div>
         </section>
     </section>
+
+    <section id="searched-books">
+        <h2 id="searched-books-title">Books you have searched for</h2>
+        <div id="searched-book-list">
+            <div id="searched-book-card">
+                <div id="search-book-title">Book Name : alchemist</div>
+                <div id="search-book-author">Book Author : Paulo Choelho</div>
+                <div id="search-book-price">Book Price : 400</div>
+            </div>
+        </div>
+    </section>
     <script src="script.js"></script>
+    <script src="books.json"></script>
 </body>
 
 </html>

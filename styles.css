@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 #header {
@@ -338,4 +339,32 @@ button {
 #add-form input:focus {
     outline: none;
     z-index: 111;
+}
+#searched-book-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* padding: 20px; */
+}
+#searched-book-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    padding: 20px;
+    margin: 20px 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+#searched-books{
+    margin: 5em;
+    border: 1px solid black;
+    /* display: none; */
+}
+#searched-books-title{
+    font-size: 3rem;
+    text-align: center;
+    margin: 1em;
 }

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "price": 10.00,
+        "image": "images/alchemist.jpg"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "price": 12.00,
+        "image": "images/gatsby.jpg"
+    },
+    {
+        "title": "The great in the Rye",
+        "author": "J.D. Salinger",
+        "price": 15.00,
+        "image": "images/catcher.jpg"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "price": 20.00,
+        "image": "images/mockingbird.jpg"
+    }
+]

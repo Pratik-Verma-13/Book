@@ -82,13 +82,44 @@ function clearInput(){
 // Displaying books according to price
 
 function sortBooks(){
-    getBooks().then(books => () => {
-        bookArray = Object.values(books);
-        console.log("Hello");
-        console.log(bookArray);
-        bookArray.sort((a, b) => a.price - b.price);
-        console.log(bookArray);
+    getBooks().then(books => {
+        books.sort((a, b) => a.price - b.price);
+        // console.log(books);
     });
 }
 
 sortBooks();
+window.addEventListener('load', () => {
+    getBooks().then(books => {
+        for(let key in books){
+            let book = books[key];
+            localStorage.setItem(`${book.id}`, `${book.title}`);
+        }
+    })
+})
+
+
+function addBooks(){
+    let addTitle = document.getElementById('add-book-name');
+    let addAuthor = document.getElementById('add-author-name');
+    let addPrice = document.getElementById('add-price');
+    let addId = document.getElementById('add-id');  
+    
+    let book = {
+        "id": addId.value,
+        "title": addTitle.value,
+        "author": addAuthor.value,
+        "price": addPrice.value
+    }
+    localStorage.setItem(`${book.id}`, `${book.title}`);   
+    alert("Book added successfully");
+}
+
+function removeBooks(){
+    let removeId = document.getElementById('remove-id');
+    localStorage.removeItem(`${removeId.value}`);
+    alert("Book removed successfully");
+}
+
+let submitAdd = document.getElementById('submit-add-form');
+submitAdd.addEventListener('click', addBooks);

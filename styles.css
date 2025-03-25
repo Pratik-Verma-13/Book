@@ -386,6 +386,37 @@ button {
     text-align: center;
     margin: 1em;
 }
+/* add to cart */
+#cart-section {
+    margin-top: 20px auto;
+    padding: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.remove-from-cart {
+    background-color: red;
+}
+
+.remove-from-cart:hover {
+    background-color: darkred;
+}
 
 
 /* footer  */

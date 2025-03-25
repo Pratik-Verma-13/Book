@@ -121,3 +121,42 @@ addToCart.forEach(element => {
         }
     })
 })
+
+// Cart Functionality
+let cart = [];
+
+function updateCartUI() {
+    let cartList = document.getElementById('cart-list');
+    cartList.innerHTML = "";
+    let totalPrice = 0;
+
+    cart.forEach((book, index) => {
+        totalPrice += book.price;
+        let cartItem = document.createElement('div');
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <div>${book.title} - ₹${book.price}</div>
+            <button class="remove-from-cart" data-index="${index}">Remove</button>
+        `;
+        cartList.appendChild(cartItem);
+    });
+
+    document.getElementById('total-price').innerText = totalPrice;
+
+    attachRemoveFromCartEvents();
+}
+
+function attachAddToCartEvents() {
+    let buttons = document.querySelectorAll('.add-to-cart');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            let book = {
+                id: this.getAttribute('data-id'),
+                title: this.getAttribute('data-title'),
+                price: parseFloat(this.getAttribute('data-price'))
+            };
+            cart.push(book);
+            updateCartUI();
+        });
+    });
+}

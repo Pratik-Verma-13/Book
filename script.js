@@ -45,13 +45,32 @@ searchButton.addEventListener('click', async function () {
     
 });
 
-// Retreving books from json file
-async function getBooks() {
-    let response = await fetch('books.json');
-    let data = await response.json();
-    return data;
-}
-
+const bookObject = [
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "price": 10.00,
+        "id": 101
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "price": 12.00,
+        "id": 102
+    },
+    {
+        "title": "The great in the Rye",
+        "author": "J.D. Salinger",
+        "price": 3.00,
+        "id": 103
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "price": 20.00,
+        "id": 104
+    }
+]
 
 // Clearing input box
 function clearInput() {
@@ -61,29 +80,26 @@ function clearInput() {
 
 // Displaying books according to price
 function sortBooks() {
-    getBooks().then(books => {
-        books.sort((a, b) => a.price - b.price);
-        // console.log(books);
-    });
+    
 }
 
 // Storing books in local storage from json file
-window.addEventListener('load', () => {
-    getBooks().then(books => {
-        localStorage.setItem('books', JSON.stringify(books));
-        let books = localStorage.getItem
-        const bookDisplay = document.getElementById("book-list");
-        let bookCard = document.createElement('div');
-        bookCard.classList.add('book-card');
+function displayBooks(){
+    const displayBookList = document.getElementById("book-list");
+    displayBookList.innerHTML = "";
+    bookObject.forEach(book => { 
+        let bookCard = document.createElement("div");
         bookCard.innerHTML = `
-            <div id="book-title">Book Title</div>
-            <div id="book-author">Book Author</div>
-            <div id="book-price">Book Price</div>
-            <div id="book-id">Book ID</div>
+        <div class="book-card">
+            <div class="book-title"> Book Name : ${book.title}</div>
+            <div class="book-author"> Book Author : ${book.author}</div>
+            <div class="book-price"> Book Price : ${book.price}<div>
+            <div class="id">${book.id}</div>
+        </div>
         `;
-        bookDisplay.appendChild(bookCard);
-    })
-})
+        displayBookList.appendChild(bookCard)
+    });      
+}
 
 // adding new books
 let submitAdd = document.getElementById('submit-add-form');
@@ -103,16 +119,18 @@ function addBooks() {
         "price": addPrice.value,
         "id": addId.value,
     }
-    localStorage.setItem(`${book.id}`, `${JSON.stringify(book)}`);
+    bookObject.push(book);
     alert("Book added successfully");
 }
 
+
 // removing books
-function removeBooks() {
-    let removeId = document.getElementById('remove-id');
-    localStorage.removeItem(`${removeId.value}`);
-    alert("Book removed successfully");
-}
+const removeBooks = document.getElementsByClassName("remove-btn");
+removeBooks.forEach(element => {
+   element.addEventListener("click", () => {
+
+   })
+});
 
 // Adding books to cart
 addToCart = Array.from(document.getElementsByClassName('add-to-cart'));

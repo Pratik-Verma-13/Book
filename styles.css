@@ -444,4 +444,19 @@ footer {
     margin-top: 20px;
     font-size: 14px;
 }
+#wishlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
+    padding:10px;
+}
+.wish-list{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+
+}
 

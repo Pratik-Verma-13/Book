@@ -1,10 +1,10 @@
 // Search functionality
 let searchButton = document.getElementById('search-btn');
-searchButton.addEventListener('click', async function () {
+searchButton.addEventListener('click', () => {
     
     let searchBox = document.getElementById('input-box');
     let searchValue = searchBox.value.toLowerCase();
-    searchBox.value = "";
+    // searchBox.value = "";
     let displaySearchedBooks = document.getElementById('searched-book-list');
     displaySearchedBooks.innerHTML = "";
     let showSearch = document.getElementById('searched-books');
@@ -13,28 +13,22 @@ searchButton.addEventListener('click', async function () {
         return
     }
     showSearch.style.display = "none";
-    let books = await getBooks();
-    console.log(books);
-    for (let key in books) {
-        let book = books[key];
-        let title = book.title.toLowerCase();
-        let author = book.author.toLowerCase();
-        if (title.includes(searchValue) || author.includes(searchValue)) {
-            console.log("hello");
-            let child = document.createElement('div');
-            child.innerHTML = `
-            <div id="searched-book-card">
-                <div id="search-book-title">Book Title : ${book.title}</div>
-                <div id="search-book-author">Book Author : ${book.author}</div>
-                <div id="search-book-price">Book Price : &#8377; ${book.price}</div>
-            </div>
-            `;
-            window.location.href = "#searched-books";
-            displaySearchedBooks.appendChild(child);
-
+    // console.log(books);
+    bookObject.forEach(book => () => {
+        title = book.title;
+        author = book.author;
+        if(title.include(searchValue)||author.include(searchValue)){
+            let bookCard = document.createElement("div");
+            bookCard.classList.add("book-card");
+            bookCard.innerHTML = `
+            <div class="book-title">${book.title}</div>
+            <div class="book-author">${book.author}</div>
+            <div class="book-price">₹ ${book.price}<div>
+            <div class="id">${book.id}</div>
+        `;
+            displaySearchedBooks.appendChild(bookCard);
         }
-        
-    }
+    })
     if (displaySearchedBooks.innerHTML == "") {
         alert("Sorry, No books found");
         return
@@ -89,18 +83,17 @@ function displayBooks(){
     displayBookList.innerHTML = "";
     bookObject.forEach(book => { 
         let bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
         bookCard.innerHTML = `
-        <div class="book-card">
-            <div class="book-title"> Book Name : ${book.title}</div>
-            <div class="book-author"> Book Author : ${book.author}</div>
-            <div class="book-price"> Book Price : ${book.price}<div>
+            <div class="book-title">${book.title}</div>
+            <div class="book-author">${book.author}</div>
+            <div class="book-price">₹ ${book.price}<div>
             <div class="id">${book.id}</div>
-        </div>
         `;
         displayBookList.appendChild(bookCard)
     });      
 }
-
+displayBooks()
 // adding new books
 let submitAdd = document.getElementById('submit-add-form');
 submitAdd.addEventListener('click', addBooks);
@@ -121,6 +114,7 @@ function addBooks() {
     }
     bookObject.push(book);
     alert("Book added successfully");
+    displayBooks();
 }
 
 
@@ -128,7 +122,13 @@ function addBooks() {
 const removeBooks = document.getElementsByClassName("remove-btn");
 removeBooks.forEach(element => {
    element.addEventListener("click", () => {
-
+        const toRemoveId = element.parentElement.children[3].innerText;
+        bookObject.forEach(book, () => {
+            if (book.id = toRemoveId){
+                bookObject.pop(book);
+                return;
+            }
+        })
    })
 });
 

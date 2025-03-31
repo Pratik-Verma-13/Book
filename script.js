@@ -1,7 +1,7 @@
 // Search functionality
 let searchButton = document.getElementById('search-btn');
 searchButton.addEventListener('click', async function () {
-    window.location.href = "#searched-books";
+    
     let searchBox = document.getElementById('input-box');
     let searchValue = searchBox.value.toLowerCase();
     searchBox.value = "";
@@ -29,6 +29,7 @@ searchButton.addEventListener('click', async function () {
                 <div id="search-book-price">Book Price : &#8377; ${book.price}</div>
             </div>
             `;
+            window.location.href = "#searched-books";
             displaySearchedBooks.appendChild(child);
 
         }
@@ -69,10 +70,18 @@ function sortBooks() {
 // Storing books in local storage from json file
 window.addEventListener('load', () => {
     getBooks().then(books => {
-        for (let key in books) {
-            let book = books[key];
-            localStorage.setItem(`${book.id}`, `${JSON.stringify(book)}`);
-        }
+        localStorage.setItem('books', JSON.stringify(books));
+        let books = localStorage.getItem
+        const bookDisplay = document.getElementById("book-list");
+        let bookCard = document.createElement('div');
+        bookCard.classList.add('book-card');
+        bookCard.innerHTML = `
+            <div id="book-title">Book Title</div>
+            <div id="book-author">Book Author</div>
+            <div id="book-price">Book Price</div>
+            <div id="book-id">Book ID</div>
+        `;
+        bookDisplay.appendChild(bookCard);
     })
 })
 

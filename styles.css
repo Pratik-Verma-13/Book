@@ -172,16 +172,12 @@ button {
     }
 }
 
-.favorites-section {
-    background: #F5E6D7;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.favorites-section h2 {
-    font-size: 2.5rem;
-    color: #3A2C1E;
-    margin-bottom: 30px;
+#book-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10em;
+    padding: 5em;
+    border: 1px solid black;
 }
 
 /* Book Card */
@@ -203,21 +199,6 @@ button {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Book Image */
-.book-image {
-    width: 150px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Book Info */
-.book-info {
-    flex: 1;
-    padding: 0 20px;
-    text-align: left;
-}
-
 .book-title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -231,16 +212,6 @@ button {
     margin-bottom: 10px;
 }
 
-.book-description {
-    font-size: 0.9rem;
-    color: #4B3621;
-    opacity: 0.8;
-    line-height: 1.4;
-    max-width: 600px;
-    margin-bottom: 15px;
-}
-
-/* Price */
 .book-price {
     font-size: 1.2rem;
     font-weight: bold;
